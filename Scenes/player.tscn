@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cbtpyk34ahsru"]
+[gd_scene load_steps=16 format=3 uid="uid://cbtpyk34ahsru"]
 
 [ext_resource type="Texture2D" uid="uid://biwjgw52lhkok" path="res://Assets/Main Characters/Virtual Guy/Idle (32x32).png" id="1_1hy8h"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_eswx8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j5hl2"]
 atlas = ExtResource("1_1hy8h")
@@ -92,6 +93,7 @@ radius = 8.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
+script = ExtResource("1_eswx8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
