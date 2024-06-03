@@ -313,6 +313,7 @@ height = 22.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
+texture_filter = 1
 script = ExtResource("1_eswx8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
