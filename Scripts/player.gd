@@ -26,17 +26,19 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	
-	if direction < 0 or direction > 0:
-		animated_sprite.play("run")
+	if direction < 0:
+		animated_sprite.flip_h = true
+	elif direction > 0:
+		animated_sprite.flip_h = false
+
+
+	if is_on_floor():
+		if direction == 0:
+			animated_sprite.play("idle")
+		else:
+			animated_sprite.play("run")
 	else:
-		animated_sprite.play("idle")
-
-
-	if not is_on_floor():
 		animated_sprite.play("jump")
-	
-	
-	if Input.is_action_just_released("jump") and not is_on_floor():
-		animated_sprite.play("fall")
+
 
 	move_and_slide()
