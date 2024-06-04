@@ -188,10 +188,12 @@ script = ExtResource("1_xc0g7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ioeyt")
-animation = &"collected"
+animation = &"apple"
 autoplay = "apple"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_34d8c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -4,4 +4,4 @@ extends Area2D
 
 
 func _on_body_entered(body):
-	animated_sprite.play("collected")
+	queue_free()
