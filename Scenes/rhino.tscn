@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://c08ol2dskqbxa"]
+
+[ext_resource type="Script" path="res://Scripts/rhino.gd" id="1_7g75e"]
+[ext_resource type="Texture2D" uid="uid://b43r13cu5mtso" path="res://Assets/Enemies/Rino/Run (52x34).png" id="1_ivqpv"]
+[ext_resource type="PackedScene" uid="uid://d2o5qr306w8c7" path="res://Scenes/death_zone.tscn" id="2_d501e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sen4"]
+atlas = ExtResource("1_ivqpv")
+region = Rect2(0, 0, 52, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnk8q"]
+atlas = ExtResource("1_ivqpv")
+region = Rect2(52, 0, 52, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxseq"]
+atlas = ExtResource("1_ivqpv")
+region = Rect2(104, 0, 52, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osnka"]
+atlas = ExtResource("1_ivqpv")
+region = Rect2(156, 0, 52, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b3gw"]
+atlas = ExtResource("1_ivqpv")
+region = Rect2(208, 0, 52, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfagn"]
+atlas = ExtResource("1_ivqpv")
+region = Rect2(260, 0, 52, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wv3gv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sen4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnk8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxseq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osnka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b3gw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfagn")
+}],
+"loop": true,
+"name": &"run",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80i7j"]
+size = Vector2(31, 17)
+
+[node name="Rhino" type="Node2D"]
+z_index = 5
+script = ExtResource("1_7g75e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_wv3gv")
+animation = &"run"
+autoplay = "run"
+
+[node name="DeathZone" parent="." instance=ExtResource("2_d501e")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_80i7j")
+
+[node name="RayCast2DRight" type="RayCast2D" parent="."]
+position = Vector2(13, 0)
+target_position = Vector2(12, 0)
+
+[node name="RayCast2DLeft" type="RayCast2D" parent="."]
+position = Vector2(-13, 0)
+target_position = Vector2(-12, 0)

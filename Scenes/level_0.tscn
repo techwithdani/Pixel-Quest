@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dv57nup5t2jqs"]
+[gd_scene load_steps=14 format=3 uid="uid://dv57nup5t2jqs"]
 
 [ext_resource type="Texture2D" uid="uid://ccnbyl7wuvy1v" path="res://Assets/Terrain/Terrain (16x16).png" id="1_po8ap"]
 [ext_resource type="Texture2D" uid="uid://bx1knmxnlgqss" path="res://Assets/Background/Blue.png" id="2_20q61"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bl7282lha8ydf" path="res://Assets/Traps/Spikes/Idle.png" id="3_00x3p"]
 [ext_resource type="PackedScene" uid="uid://bw5w7mcfow6en" path="res://Scenes/apple.tscn" id="4_2hhxv"]
 [ext_resource type="PackedScene" uid="uid://d2o5qr306w8c7" path="res://Scenes/death_zone.tscn" id="5_18tqg"]
+[ext_resource type="PackedScene" uid="uid://c08ol2dskqbxa" path="res://Scenes/rhino.tscn" id="5_fh0uy"]
 [ext_resource type="PackedScene" uid="uid://ku3armlwkm4n" path="res://Scenes/banana.tscn" id="5_uv1bg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qiwj5"]
@@ -617,6 +618,11 @@ layer_1/tile_data = PackedInt32Array(0, 1, 0, 65536, 1, 1, 131072, 1, 2, 196608,
 
 [node name="Player" parent="." instance=ExtResource("2_73j8v")]
 position = Vector2(60.8333, 352.5)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Rhino" parent="Enemies" instance=ExtResource("5_fh0uy")]
+position = Vector2(532, 542)
 
 [node name="DeathZoneSpikes" type="Node" parent="."]
 
