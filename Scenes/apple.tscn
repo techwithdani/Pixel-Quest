@@ -1,6 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://bw5w7mcfow6en"]
+[gd_scene load_steps=29 format=3 uid="uid://bw5w7mcfow6en"]
 
 [ext_resource type="Texture2D" uid="uid://cimcra8cbn7vt" path="res://Assets/Items/Fruits/Apple.png" id="1_fgbax"]
+[ext_resource type="Script" path="res://Scripts/apple.gd" id="1_xc0g7"]
+[ext_resource type="Texture2D" uid="uid://dupju6neifql6" path="res://Assets/Items/Fruits/Collected.png" id="2_rmaap"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fhhla"]
 atlas = ExtResource("1_fgbax")
@@ -70,6 +72,30 @@ region = Rect2(480, 0, 32, 32)
 atlas = ExtResource("1_fgbax")
 region = Rect2(512, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fv2un"]
+atlas = ExtResource("2_rmaap")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5legy"]
+atlas = ExtResource("2_rmaap")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4stv"]
+atlas = ExtResource("2_rmaap")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl1wi"]
+atlas = ExtResource("2_rmaap")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_300ew"]
+atlas = ExtResource("2_rmaap")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3b2eq"]
+atlas = ExtResource("2_rmaap")
+region = Rect2(160, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ioeyt"]
 animations = [{
 "frames": [{
@@ -127,12 +153,36 @@ animations = [{
 "loop": true,
 "name": &"apple",
 "speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fv2un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5legy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4stv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl1wi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_300ew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3b2eq")
+}],
+"loop": true,
+"name": &"collected",
+"speed": 15.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_34d8c"]
 radius = 4.0
 
 [node name="Apple" type="Area2D"]
+script = ExtResource("1_xc0g7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

@@ -632,6 +632,27 @@ position = Vector2(533, 549)
 [node name="Apple9" parent="Apples" instance=ExtResource("4_2hhxv")]
 position = Vector2(729, 510)
 
+[node name="Apple10" parent="Apples" instance=ExtResource("4_2hhxv")]
+position = Vector2(624, 204)
+
+[node name="Apple11" parent="Apples" instance=ExtResource("4_2hhxv")]
+position = Vector2(586, 204)
+
+[node name="Apple12" parent="Apples" instance=ExtResource("4_2hhxv")]
+position = Vector2(605, 188)
+
+[node name="Apple13" parent="Apples" instance=ExtResource("4_2hhxv")]
+position = Vector2(468, 156)
+
+[node name="Apple14" parent="Apples" instance=ExtResource("4_2hhxv")]
+position = Vector2(357, 242)
+
+[node name="Apple15" parent="Apples" instance=ExtResource("4_2hhxv")]
+position = Vector2(259, 299)
+
+[node name="Apple16" parent="Apples" instance=ExtResource("4_2hhxv")]
+position = Vector2(197, 131)
+
 [node name="Bananas" type="Node" parent="."]
 
 [node name="Banana" parent="Bananas" instance=ExtResource("5_uv1bg")]
@@ -660,3 +681,24 @@ position = Vector2(659, 279)
 
 [node name="Banana9" parent="Bananas" instance=ExtResource("5_uv1bg")]
 position = Vector2(468, 181)
+
+[node name="Banana10" parent="Bananas" instance=ExtResource("5_uv1bg")]
+position = Vector2(357, 220)
+
+[node name="Banana11" parent="Bananas" instance=ExtResource("5_uv1bg")]
+position = Vector2(166, 299)
+
+[node name="Banana12" parent="Bananas" instance=ExtResource("5_uv1bg")]
+position = Vector2(182, 202)
+
+[node name="Banana13" parent="Bananas" instance=ExtResource("5_uv1bg")]
+position = Vector2(213, 202)
+
+[node name="Banana14" parent="Bananas" instance=ExtResource("5_uv1bg")]
+position = Vector2(213, 181)
+
+[node name="Banana15" parent="Bananas" instance=ExtResource("5_uv1bg")]
+position = Vector2(182, 181)
+
+[node name="Banana16" parent="Bananas" instance=ExtResource("5_uv1bg")]
+position = Vector2(198, 156)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://ku3armlwkm4n"]
+[gd_scene load_steps=28 format=3 uid="uid://ku3armlwkm4n"]
 
 [ext_resource type="Texture2D" uid="uid://d3nss8ngvy4ux" path="res://Assets/Items/Fruits/Bananas.png" id="1_g1aue"]
+[ext_resource type="Texture2D" uid="uid://dupju6neifql6" path="res://Assets/Items/Fruits/Collected.png" id="2_3wane"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_auxhw"]
 atlas = ExtResource("1_g1aue")
@@ -70,6 +71,30 @@ region = Rect2(480, 0, 32, 32)
 atlas = ExtResource("1_g1aue")
 region = Rect2(512, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq1r1"]
+atlas = ExtResource("2_3wane")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syapl"]
+atlas = ExtResource("2_3wane")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0wgf"]
+atlas = ExtResource("2_3wane")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stoda"]
+atlas = ExtResource("2_3wane")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2smt"]
+atlas = ExtResource("2_3wane")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmx8t"]
+atlas = ExtResource("2_3wane")
+region = Rect2(160, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_cwgcr"]
 animations = [{
 "frames": [{
@@ -126,6 +151,29 @@ animations = [{
 }],
 "loop": true,
 "name": &"banana",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq1r1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syapl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0wgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stoda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2smt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmx8t")
+}],
+"loop": true,
+"name": &"collected",
 "speed": 15.0
 }]
 
