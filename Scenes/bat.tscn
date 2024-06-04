@@ -71,7 +71,8 @@ radius = 314.407
 radius = 8.0
 
 [node name="Bat" type="CharacterBody2D"]
-collision_mask = 3
+z_index = 5
+collision_mask = 2
 script = ExtResource("1_44edp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
