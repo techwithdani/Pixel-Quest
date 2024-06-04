@@ -173,7 +173,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3b2eq")
 }],
-"loop": true,
+"loop": false,
 "name": &"collected",
 "speed": 15.0
 }]
@@ -188,7 +188,7 @@ script = ExtResource("1_xc0g7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ioeyt")
-animation = &"apple"
+animation = &"collected"
 autoplay = "apple"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
