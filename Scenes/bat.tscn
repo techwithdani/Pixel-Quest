@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=3 uid="uid://ccgfb3ywqhbju"]
+
+[ext_resource type="Texture2D" uid="uid://xdi8fdjjadfn" path="res://Assets/Enemies/Bat/Flying (46x30).png" id="1_dv7uf"]
+[ext_resource type="PackedScene" uid="uid://d2o5qr306w8c7" path="res://Scenes/death_zone.tscn" id="2_nun6r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdf2t"]
+atlas = ExtResource("1_dv7uf")
+region = Rect2(0, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvves"]
+atlas = ExtResource("1_dv7uf")
+region = Rect2(46, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jr8b"]
+atlas = ExtResource("1_dv7uf")
+region = Rect2(92, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bljas"]
+atlas = ExtResource("1_dv7uf")
+region = Rect2(138, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akwwl"]
+atlas = ExtResource("1_dv7uf")
+region = Rect2(184, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdpqa"]
+atlas = ExtResource("1_dv7uf")
+region = Rect2(230, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23dub"]
+atlas = ExtResource("1_dv7uf")
+region = Rect2(276, 0, 46, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xivnl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdf2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvves")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jr8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bljas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akwwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdpqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23dub")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yi4li"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ev4on"]
+radius = 295.169
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qlcq6"]
+radius = 8.0
+
+[node name="Bat" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_xivnl")
+animation = &"fly"
+
+[node name="DeathZone" parent="." instance=ExtResource("2_nun6r")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+shape = SubResource("CircleShape2D_yi4li")
+
+[node name="PlayerChase" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerChase"]
+shape = SubResource("CircleShape2D_ev4on")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qlcq6")
