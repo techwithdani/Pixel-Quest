@@ -1,4 +1,4 @@
 [gd_scene format=3 uid="uid://toas50sdjhf"]
 
-[node name="KillZone" type="Area2D"]
+[node name="DeathZone" type="Area2D"]
 collision_mask = 2

@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dv57nup5t2jqs"]
+[gd_scene load_steps=13 format=3 uid="uid://dv57nup5t2jqs"]
 
 [ext_resource type="Texture2D" uid="uid://ccnbyl7wuvy1v" path="res://Assets/Terrain/Terrain (16x16).png" id="1_po8ap"]
 [ext_resource type="Texture2D" uid="uid://bx1knmxnlgqss" path="res://Assets/Background/Blue.png" id="2_20q61"]
 [ext_resource type="PackedScene" uid="uid://cbtpyk34ahsru" path="res://Scenes/player.tscn" id="2_73j8v"]
 [ext_resource type="Texture2D" uid="uid://bl7282lha8ydf" path="res://Assets/Traps/Spikes/Idle.png" id="3_00x3p"]
 [ext_resource type="PackedScene" uid="uid://bw5w7mcfow6en" path="res://Scenes/apple.tscn" id="4_2hhxv"]
+[ext_resource type="PackedScene" uid="uid://toas50sdjhf" path="res://Scenes/death_zone.tscn" id="5_8wqyy"]
 [ext_resource type="PackedScene" uid="uid://ku3armlwkm4n" path="res://Scenes/banana.tscn" id="5_uv1bg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qiwj5"]
@@ -598,6 +599,9 @@ sources/0 = SubResource("TileSetAtlasSource_qiwj5")
 sources/1 = SubResource("TileSetAtlasSource_ybp6v")
 sources/2 = SubResource("TileSetAtlasSource_hxwbq")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsn3s"]
+size = Vector2(32.3437, 8.33332)
+
 [node name="Level0" type="Node2D"]
 scale = Vector2(1.2, 1.2)
 
@@ -613,6 +617,39 @@ layer_1/tile_data = PackedInt32Array(0, 1, 0, 65536, 1, 1, 131072, 1, 2, 196608,
 
 [node name="Player" parent="." instance=ExtResource("2_73j8v")]
 position = Vector2(60.8333, 352.5)
+
+[node name="DeathZoneSpikes" type="Node" parent="."]
+
+[node name="DeathZone" parent="DeathZoneSpikes" instance=ExtResource("5_8wqyy")]
+scale = Vector2(1.2, 1.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZoneSpikes/DeathZone"]
+position = Vector2(144.167, 508.333)
+shape = SubResource("RectangleShape2D_wsn3s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZoneSpikes/DeathZone"]
+position = Vector2(80, 508.333)
+shape = SubResource("RectangleShape2D_wsn3s")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DeathZoneSpikes/DeathZone"]
+position = Vector2(240, 460)
+shape = SubResource("RectangleShape2D_wsn3s")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="DeathZoneSpikes/DeathZone"]
+position = Vector2(304.167, 460)
+shape = SubResource("RectangleShape2D_wsn3s")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="DeathZoneSpikes/DeathZone"]
+position = Vector2(592.161, 460)
+shape = SubResource("RectangleShape2D_wsn3s")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="DeathZoneSpikes/DeathZone"]
+position = Vector2(720, 508.333)
+shape = SubResource("RectangleShape2D_wsn3s")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="DeathZoneSpikes/DeathZone"]
+position = Vector2(864.167, 508.333)
+shape = SubResource("RectangleShape2D_wsn3s")
 
 [node name="Apples" type="Node" parent="."]
 
