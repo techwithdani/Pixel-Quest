@@ -9,6 +9,11 @@ func _physics_process(delta):
 	if is_player_chase:
 		velocity = (player.get_global_position() - position).normalized() * SPEED * delta
 		animated_sprite.play("fly")
+		
+		if velocity.x < 0:
+			animated_sprite.flip_h = false
+		else:
+			animated_sprite.flip_h = true
 	else:
 		velocity = lerp(velocity, Vector2.ZERO, 00.7)
 	move_and_collide(velocity)
