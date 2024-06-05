@@ -607,6 +607,8 @@ size = Vector2(32.5, 6.97918)
 [node name="Level0" type="Node2D"]
 scale = Vector2(1.2, 1.2)
 
+[node name="Manager" type="Node2D" parent="."]
+
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 tile_set = SubResource("TileSet_03kel")
