@@ -6,7 +6,7 @@ var points = 0
 
 func add_score():
 	points += 1
-	score.text = ": " + str(points)
+	score.text = ": 35/" + str(points)
 
 func player_died():
 	you_died.text = "YOU DIED!"
