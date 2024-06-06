@@ -1046,6 +1046,25 @@ theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("2_tfux2")
 theme_override_font_sizes/font_size = 16
 
+[node name="WinningMessage" type="Label" parent="Manager"]
+texture_filter = 1
+offset_left = 96.0
+offset_top = 115.0
+offset_right = 1066.0
+offset_bottom = 164.0
+theme_override_colors/font_color = Color(0.796078, 0, 0.0117647, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_tfux2")
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Manager"]
+one_shot = true
+
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 tile_set = SubResource("TileSet_03kel")
@@ -1065,7 +1084,7 @@ position = Vector2(58.3333, 144.167)
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Bat" parent="Enemies" instance=ExtResource("5_2jrys")]
-position = Vector2(547, 378)
+position = Vector2(548, 378)
 
 [node name="Rhino" parent="Enemies" instance=ExtResource("5_fh0uy")]
 position = Vector2(532, 542)
@@ -1247,3 +1266,5 @@ text = "COLLECT ALL
 FRUITS TO WIN!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="timeout" from="Manager/Timer" to="Manager" method="_on_timer_timeout"]

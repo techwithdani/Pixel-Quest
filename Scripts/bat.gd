@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 120
+const SPEED = 50
 var is_player_chase = false
 var player = null
 @onready var animated_sprite = $AnimatedSprite2D
@@ -21,7 +21,6 @@ func _physics_process(delta):
 func _on_player_chase_body_entered(body):
 	player = body
 	is_player_chase = true
-
 
 func _on_player_chase_body_exited(body):
 	player = null
