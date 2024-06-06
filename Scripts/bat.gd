@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 50
+const SPEED = 120
 var is_player_chase = false
 var player = null
 @onready var animated_sprite = $AnimatedSprite2D
